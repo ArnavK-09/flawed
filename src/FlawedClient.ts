@@ -15,7 +15,7 @@ export class FlawedClient {
     }
 
     handleServer() {
-        this.server.get('/', (req: any, res: any) => {
+        this.server.get('/*', (req: any, res: any) => {
             res.send('Flawed');
         });
     }
