@@ -1,6 +1,6 @@
 {
   "name": "flawed-alpha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "💩",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
