@@ -31,9 +31,9 @@
   "homepage": "https://github.com/ArnavK-09/flawed#readme",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./lib/cjs/index.js",
+      "import": "./src/index.ts",
+      "types": "./src/types/index.d.ts"
     }
   },
   "files": [

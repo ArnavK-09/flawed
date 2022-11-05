@@ -1,5 +1,5 @@
 // imports 
-import { FlawedHead } from '../../packages/flawed/dist/index.mjs';
+import { FlawedHead } from '../../packages/flawed/src/index';
 
 // screen 
 export default class SiteHead extends FlawedHead {

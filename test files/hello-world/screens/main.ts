@@ -1,5 +1,5 @@
 // imports 
-import { FlawedScreen, UseComponent } from '../../../packages/flawed/dist/index';
+import { FlawedScreen, UseComponent } from '../../../packages/flawed/src/index';
 import App from '../App';
 
 // screen 

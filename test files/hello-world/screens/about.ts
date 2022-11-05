@@ -1,5 +1,5 @@
 // imports 
-import { FlawedScreen } from '../../../packages/flawed/dist/index';
+import { FlawedScreen } from '../../../packages/flawed/src/index';
 
 // screen 
 export default class AboutScreen extends FlawedScreen {

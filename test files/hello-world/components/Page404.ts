@@ -1,5 +1,5 @@
 // imports 
-import { FlawedComponent } from '../../../packages/flawed/dist/index';
+import { FlawedComponent } from '../../../packages/flawed/src/index';
 
 // screen 
 export default class Page404 extends FlawedComponent {

@@ -1,5 +1,5 @@
 // imports 
-const { FlawedClient, FlawedScreen }  = require('../../packages/flawed/dist/index.js');
+const { FlawedClient, FlawedScreen }  = require('../../packages/flawed/lib/cjs/index.js');
 
 // screen 
 class MainScreen extends FlawedScreen {
