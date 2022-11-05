@@ -1,6 +1,7 @@
 // imports 
 const { FlawedClient, FlawedScreen }  = require('../../packages/flawed/lib/cjs/index.js');
 
+ 
 // screen 
 class MainScreen extends FlawedScreen {
     constructor() {
@@ -12,7 +13,7 @@ class MainScreen extends FlawedScreen {
     render() {
         return {
             page: `
-               <h1> Hii </h1>            
+               <h1> Hiii </h1>            
             `,
             title: 'Index'
         }
