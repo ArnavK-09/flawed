@@ -9,7 +9,7 @@
     "clean": "rm -rf ./lib",
     "build": "npm run build:esm && npm run build:cjs",
     "build:cjs": "tsc --module CommonJs --outDir build/cjs && npm run postbuild:cjs",
-    "postbuild:cjs": "node ../../scripts/postbuild.mjs --path=build",
+    "postbuild:cjs": "node ./scripts/postbuild.mjs --path=build",
     "build:esm": "tsc --outDir build/esm",
     "prepack": "npm run build"
   },
