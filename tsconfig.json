@@ -1,0 +1,26 @@
+  {
+    "compilerOptions": {
+      "module": "ESNext",
+      "target": "ESNext",
+      "noImplicitAny": true,
+      "sourceMap": true,
+      "strict": false,
+      "strictNullChecks": true,
+      "noUncheckedIndexedAccess": true,
+      "rootDir": "src",
+      "outDir": "build/esm",
+      "emitDecoratorMetadata": false,
+      "experimentalDecorators": true,
+      "declaration": true,
+      "importHelpers": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "Node",
+      "esModuleInterop": true
+    },
+    "exclude": [
+      "node_modules",
+      "build",
+      "examples",
+      "docs",
+    ]
+  }
