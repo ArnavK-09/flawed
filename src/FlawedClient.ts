@@ -1,73 +1,83 @@
 // Imports 
-import { FlawedHead } from './FlawedHead';
 import express from 'express';
-import ClientOptions from './types/ClientOptions';
-import GetPageContent from './GetPageContent';
+import { FlawedHead, FlawedScreen, FlawedComponent } from './classes';
+import { FlawedClientOptions } from './types';
+import { GetPageContent, FormatHtml} from './utils';
 
 // Client 
 export class FlawedClient {
+    // Variables 
     private server: any;
     private server_port: number;
-    private screens: any[] = [];
+    private screens: FlawedScreen[] = [];
     public Screen404: string = '404 - Flawed';
-    public components: any[] = [];
+    public components: FlawedComponent[] = [];
     // @ts-ignore 
     public sitehead: FlawedHead;
 
-    constructor(options: ClientOptions) {
+    // Init Server 
+    constructor(options: FlawedClientOptions) {
         this.server = express();
         this.server.use(express.static('static'));
         this.server_port = options.port;
         console.log("init");
-    }
+    };
 
+    // Handling Server 
     handleServer() {
         this.server.get('/*', (req: any, res: any) => {
-            // route 
+            // getting route 
             let route = req.params[0].trim().toLowerCase();
-            // index or other route 
-            if(route == '') {
-                // main index page 
-                res.send(`${GetPageContent(this.screens[0], this.sitehead)}`,);
-            } else {
-                // other page 
-                let routePage = this.screens.filter((screen) => screen.id == route)
 
-                if(routePage.length == 1) {
-                    res.send(`${GetPageContent(routePage[0], this.sitehead)}`,);
+            // validting route 
+            if (route == '') {
+                // index page 
+                res.send(`${GetPageContent(this.screens[0], this.sitehead)}`);
+            } else {
+                // getting any other page 
+                let routePage = this.screens.filter((screen) => screen.id == route);
+
+                // validating if page exists 
+                if (routePage.length == 1) {
+                    // rendering page 
+                    res.send(`${GetPageContent(routePage[0], this.sitehead)}`);
                 } else {
                     // 404
-                    res.send(`${this.Screen404}`);
-                }
-
-            }
+                    res.send(`${FormatHtml(this.Screen404)}`);
+                };
+            };
         });
-    }
+    };
 
+    // Start Server 
     start() {
-        this.server.listen(this.server_port)
-        this.handleServer()
-        console.log("Server Started")
-    }
+        this.server.listen(this.server_port);
+        this.handleServer();
+        console.log("Server Started");
+    };
 
-    setScreens(screens: any) {
+    // Set Screens 
+    setScreens(screens: FlawedScreen[]) {
+        // Pushing all screens to array
         screens.forEach((screen: any) => {
             this.screens.push(screen);
         });
-    }
+    };
 
+    // Set Head Content 
     setHead(customHead: FlawedHead) {
         this.sitehead = customHead;
-    }
+    };
 
-    set404Content(new404: string){
+    // Custom 404 Page 
+    set404Content(new404: string) {
         this.Screen404 = new404;
-    }
+    };
 
-    registerComponents(componentsList: Array<any>) {
+    // Registering All Compoents To App 
+    registerComponents(componentsList: Array<FlawedComponent>) {
         componentsList.forEach((component: any) => {
             this.components.push(component);
         });
-    }
-
-}
+    };
+};

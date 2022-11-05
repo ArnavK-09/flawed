@@ -1,15 +1,22 @@
+// Imports 
+import type { FlawedScreenOptions } from '../types';
+
 // FlawedScreen 
 export class FlawedScreen {
     // config variables 
     public screen_id;
-    constructor(options: any) {
-        this.screen_id = options.id
-    }
 
+    // Screen Options 
+    constructor(options: FlawedScreenOptions) {
+        this.screen_id = options.id;
+    };
+
+    // Id Getter 
     get id() {
         return this.screen_id;
-    }
+    };
 
+    // Render Functions, Returns Page Content 
     render() {
         return {
             page: `
@@ -17,6 +24,6 @@ export class FlawedScreen {
             
             `,
             title: 'Flawed Site'
-        }
-    }
-}
+        };
+    };
+};

@@ -1,10 +1,10 @@
 // imports 
-import {FlawedClient, UseComponent}  from '../../src/index';
+import { FlawedClient, UseComponent }  from '../../src/index';
 import SiteHead from './SiteHead';
 
 // new app 
 const app = new FlawedClient({
-    port: 1111
+    port: 2222
 })
 
 // views 

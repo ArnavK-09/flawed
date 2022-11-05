@@ -1,6 +1,4 @@
 // exporting 
 export * from "./FlawedClient";
-export * from './FlawedScreen';
-export * from './FlawedHead';
-export * from './FlawedComponent';
-export * from './UseComponent';
+export * from './classes/';
+export * from './utils/';

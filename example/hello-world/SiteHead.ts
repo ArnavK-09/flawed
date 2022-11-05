@@ -5,8 +5,7 @@ import { FlawedHead } from '../../src/index';
 export default class SiteHead extends FlawedHead {
     constructor() {
         super({
-            head: `<title>Hi</title>`,
-            favicon: '/favicon.png'
+            head: `<title>Hi</title>`
         })
     }
 }
