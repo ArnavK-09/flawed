@@ -1,6 +1,6 @@
 {
   "name": "flawed-beta",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "💩",
   "types": "./src/types/index.d.ts",
   "main": "./src/index.js",
