@@ -4,7 +4,7 @@ import SiteHead from './SiteHead';
 
 // new app 
 const app = new FlawedClient({
-    port: 3022
+    port: 1233
 })
 
 // views 
