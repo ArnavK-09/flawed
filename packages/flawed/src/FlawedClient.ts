@@ -12,8 +12,9 @@ export class FlawedClient {
     private screens: FlawedScreen[] = [];
     public Screen404: string = '404 - Flawed';
     public components: FlawedComponent[] = [];
-    // @ts-ignore 
-    public sitehead: FlawedHead;
+    public sitehead: FlawedHead = new FlawedHead({
+        head: `<title>Flawed App</title>`
+    });
 
     // Init Server 
     constructor(options: FlawedClientOptions) {

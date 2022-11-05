@@ -1,10 +1,10 @@
-// imports 
-import { FlawedClient, UseComponent }  from '../../packages/flawed/src/index';
+// @ts-ignore imports 
+import { FlawedClient, UseComponent }  from '../../packages/flawed/dist/index';
 import SiteHead from './SiteHead';
 
 // new app 
 const app = new FlawedClient({
-    port: 3000
+    port: 3022
 })
 
 // views 
