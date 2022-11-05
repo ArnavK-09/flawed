@@ -1,5 +1,5 @@
 // imports 
-import { FlawedComponent } from '../../../packages/flawed/src/index';
+import { FlawedComponent } from '../../../flawed/src/index';
 
 // screen 
 export default class Navbar extends FlawedComponent {

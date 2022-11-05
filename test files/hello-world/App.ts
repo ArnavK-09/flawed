@@ -1,5 +1,5 @@
 // @ts-ignore imports 
-import { FlawedClient, UseComponent }  from '../../packages/flawed/src/index';
+import { FlawedClient, UseComponent }  from '../../flawed/src/index';
 import SiteHead from './SiteHead';
 
 // new app 

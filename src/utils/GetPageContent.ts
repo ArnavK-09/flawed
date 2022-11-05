@@ -1,7 +1,7 @@
 // imports 
 import { FlawedHead } from '../classes/FlawedHead';
 import { FlawedScreen } from '../classes/FlawedScreen';
-import { FormatHtml } from './';
+import { FormatHtml } from '.';
 
 // Get Page Content 
 export function GetPageContent(ctx: FlawedScreen, head: FlawedHead) {
