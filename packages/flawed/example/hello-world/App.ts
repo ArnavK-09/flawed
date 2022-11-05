@@ -1,5 +1,5 @@
 // imports 
-import { FlawedClient, UseComponent }  from '../../src/index';
+import { FlawedClient, UseComponent }  from '../../packages/flawed/src/index';
 import SiteHead from './SiteHead';
 
 // new app 
