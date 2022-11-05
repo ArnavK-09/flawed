@@ -1,6 +1,6 @@
 {
-  "name": "flawed",
-  "version": "1.0.1",
+  "name": "flawed-alpha",
+  "version": "1.0.2",
   "description": "💩",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
@@ -8,9 +8,7 @@
     "clean": "rm -rf ./lib",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p ./tsconfig.esm.json",
-    "build:cjs": "tsc -p ./tsconfig.cjs.json",
-    "prepack": "npm run build",
-    "test": "mocha"
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -31,7 +29,6 @@
   "homepage": "https://github.com/ArnavK-09/flawed#readme",
   "exports": {
     ".": {
-      "require": "./lib/cjs/index.js",
       "import": "./src/index.ts",
       "types": "./src/types/index.d.ts"
     }
