@@ -33,6 +33,7 @@
       "types": "./src/types/index.d.ts"
     }
   },
+  "files": ["**/**/*"],
   "devDependencies": {
     "@types/express": "^4.17.14",
     "ts-node": "^10.9.1",
