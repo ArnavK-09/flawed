@@ -12,7 +12,7 @@ export function UseComponent(name: string, app: FlawedClient) {
     // checking if valid component 
     if (componentFound.length == 1) {
         // component found 
-        return componentFound[0].view()
+        return componentFound[0]?.view()
     } else {
         // if no component found 
         return new FlawedComponent().view()

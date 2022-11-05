@@ -32,15 +32,15 @@ export class FlawedClient {
 
             // validting route 
             if (route == '') {
-                // index page 
+                // @ts-ignore index page 
                 res.send(`${GetPageContent(this.screens[0], this.sitehead)}`);
             } else {
                 // getting any other page 
-                let routePage = this.screens.filter((screen) => screen.id == route);
+                let routePage: FlawedScreen[] = this.screens.filter((screen) => screen.id == route);
 
                 // validating if page exists 
                 if (routePage.length == 1) {
-                    // rendering page 
+                    // @ts-ignore rendering page 
                     res.send(`${GetPageContent(routePage[0], this.sitehead)}`);
                 } else {
                     // 404
