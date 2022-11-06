@@ -3,8 +3,6 @@ import express from 'express';
 import { FlawedHead, FlawedScreen, FlawedComponent } from './classes';
 import { FlawedClientOptions } from './types';
 import { GetPageContent, FormatHtml } from './utils';
-import log from 'fancy-log';
-// @ts-ignore
 import gradient  from 'gradient-string';
 
 // Client 
@@ -68,7 +66,7 @@ export class FlawedClient {
             console.log(gradient('#0d0d0d', '#333131')(`[Flawed] [${new Date().toString()}] `) + gradient('#ff5f6d', '#ffc371')('Server Started On Port ' + this.server_port + '\n'))
         } catch(e) {
             // if err 
-            log.error(e)
+            console.log(gradient('#0d0d0d', '#333131')(`[Flawed] [${new Date().toString()}] `) + gradient('#f5111d', '#ab050d')(e))
         }
     };
 

@@ -42,37 +42,104 @@ npm install @arnavk-09/flawed
 - Logs Everything
 - Classes Based
 - Compatible With ECM & CJS
+- Out Of The Box Head Component
 - Supports Static Files
 - Automatic Favicon Picking
 
-# Examples
+# Simple Examples
 
 ### Javascript
 ```js
 // Imports 
-const { FlawedClient, FlawedScreen, FlawedComponent, UseComponent } = require('../build/cjs/index.js');
+const { FlawedClient, FlawedScreen, FlawedComponent, UseComponent } = require('@arnavk-09/flawed');
 
 // Init Flawed App 
 const app = new FlawedClient({
     port: 3000
-})
+});
 
 // Nav Bar Component 
 class Navbar extends FlawedComponent {
     // Giving Name To Component
     constructor() {
         super({
-            name: 'Navbar'
-        })
-    }
+            name: 'Navbar';
+        });
+    };
 
     // Component Content 
     view() {
-        return (`
+        return (
+          `
             <a href='/'> Navbar </a>
-        `)
-    }
-}
+            <br>
+          `
+        );
+    };
+};
+
+// Creating Main Screen 
+class MainScreen extends FlawedScreen {
+    // Giving ID To Screen
+    constructor() {
+        super({
+            route: 'main'; // use 'main' for index route
+        });
+    };
+
+    // Screen Content  
+    render() {
+        return {
+            page: `
+                ${UseComponent('Navbar', app)}
+                Hellow Flawed!
+            `;
+        };
+    };
+};
+
+// Adding Screens To App 
+app.setScreens([new MainScreen()]);
+
+// Register Components 
+app.registerComponents([new Navbar()]);
+
+// Setup 404 Page 
+app.set404Content(`404 Page!`);
+
+// Starting Flawed App 
+app.start();
+```
+
+### Typescript
+```ts
+// Imports 
+import { FlawedClient, FlawedScreen, FlawedComponent, UseComponent } from ('@arnavk-09/flawed');
+
+// Init Flawed App 
+const app = new FlawedClient({
+    port: 3000
+});
+
+// Nav Bar Component 
+class Navbar extends FlawedComponent {
+    // Giving Name To Component
+    constructor() {
+        super({
+            name: 'Navbar';
+        });
+    };
+
+    // Component Content 
+    view() {
+        return (
+          `
+            <a href='/'> Navbar </a>
+            <br>
+          `
+        );
+    };
+};
 
 // Creating Main Screen 
 class MainScreen extends FlawedScreen {
@@ -80,8 +147,8 @@ class MainScreen extends FlawedScreen {
     constructor() {
         super({
             route: 'main' // use 'main' for index route
-        })
-    }
+        });
+    };
 
     // Screen Content  
     render() {
@@ -90,26 +157,21 @@ class MainScreen extends FlawedScreen {
                 ${UseComponent('Navbar', app)}
                 Hellow Flawed!
             `
-        }
-    }
-}
+        };
+    };
+};
 
 // Adding Screens To App 
-app.setScreens([new MainScreen()])
+app.setScreens([new MainScreen()]);
 
 // Register Components 
-app.registerComponents([new Navbar()])
+app.registerComponents([new Navbar()]);
 
 // Setup 404 Page 
-app.set404Content(`404 Page!`)
+app.set404Content(`404 Page!`);
 
 // Starting Flawed App 
-app.start()
-```
-
-### Typescript
-```ts
-const status = 'TODO';
+app.start();
 ```
 
 #### Checkout More Flawed Templates [Here...](https://github.com/ArnavK-09)
