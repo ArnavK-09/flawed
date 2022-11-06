@@ -2,7 +2,10 @@
 import express from 'express';
 import { FlawedHead, FlawedScreen, FlawedComponent } from './classes';
 import { FlawedClientOptions } from './types';
-import { GetPageContent, FormatHtml, FlawedLogger } from './utils';
+import { GetPageContent, FormatHtml } from './utils';
+import log from 'fancy-log';
+// @ts-ignore
+import gradient  from 'gradient-string';
 
 // Client 
 export class FlawedClient {
@@ -24,7 +27,7 @@ export class FlawedClient {
         this.server_port = options.port;
 
         // Log 
-        FlawedLogger.pending('App Initialize...Wating For Start...')
+        console.log(gradient('#0d0d0d', '#333131')(`\n[Flawed] [${new Date().toString()}] `) + gradient('#02d625', '#4cc932')('App Initialize...Wating For Start...'))
     };
 
     // Handling Server 
@@ -34,15 +37,15 @@ export class FlawedClient {
             let route = req.params[0].trim().toLowerCase();
 
             // Log 
-            FlawedLogger.note(`Rqeuested Route :- /${route}`)
+            console.log(gradient('#0d0d0d', '#333131')(`[Flawed] [${new Date().toString()}] `) + gradient('#f43b47', '#453a94')(`Requested Route :- /${route}`))
 
             // validting route 
             if (route == '') {
                 // @ts-ignore index page 
-                res.send(`${GetPageContent(this.screens[0], this.sitehead)}`);
+                res.send(`${GetPageContent(this.screens[0] == undefined ? new FlawedScreen({ id: 'site'}) : this.screens[0], this.sitehead)}`);
             } else {
                 // getting any other page 
-                let routePage: FlawedScreen[] = this.screens.filter((screen) => screen.id == route);
+                let routePage: FlawedScreen[] = this.screens.filter((screen) => screen.route == route);
 
                 // validating if page exists 
                 if (routePage.length == 1) {
@@ -58,10 +61,15 @@ export class FlawedClient {
 
     // Start Server 
     start() {
-        this.server.listen(this.server_port)
-        .then(() => FlawedLogger.success('Server Started On Port ' + this.server_port))
-        .catch((e: any) => FlawedLogger.fatal(e))
-        this.handleServer();
+        // starting server + log 
+        try {
+            this.server.listen(this.server_port)
+            this.handleServer();
+            console.log(gradient('#0d0d0d', '#333131')(`[Flawed] [${new Date().toString()}] `) + gradient('#ff5f6d', '#ffc371')('Server Started On Port ' + this.server_port + '\n'))
+        } catch(e) {
+            // if err 
+            log.error(e)
+        }
     };
 
     // Set Screens 

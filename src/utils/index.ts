@@ -2,4 +2,3 @@
 export * from './FormatHtml';
 export * from './GetPageContent';
 export * from './UseComponent';
-export * from './Logger';

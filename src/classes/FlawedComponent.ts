@@ -8,7 +8,7 @@ export class FlawedComponent {
 
     // init component 
     constructor(options?: FlawedComponentOptions) {
-        this.component_name = options?.name || 'Flawed Component Not Found';
+        this.component_name = options?.name || 'Flawed Component';
     }
 
     // if no view value specified 
