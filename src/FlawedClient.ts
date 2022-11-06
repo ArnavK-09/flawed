@@ -2,7 +2,7 @@
 import express from 'express';
 import { FlawedHead, FlawedScreen, FlawedComponent } from './classes';
 import { FlawedClientOptions } from './types';
-import { GetPageContent, FormatHtml} from './utils';
+import { GetPageContent, FormatHtml, FlawedLogger } from './utils';
 
 // Client 
 export class FlawedClient {
@@ -18,10 +18,13 @@ export class FlawedClient {
 
     // Init Server 
     constructor(options: FlawedClientOptions) {
+        // Starting sserver 
         this.server = express();
         this.server.use(express.static('static'));
         this.server_port = options.port;
-        console.log("init");
+
+        // Log 
+        FlawedLogger.pending('App Initialize...Wating For Start...')
     };
 
     // Handling Server 
@@ -29,6 +32,9 @@ export class FlawedClient {
         this.server.get('/*', (req: any, res: any) => {
             // getting route 
             let route = req.params[0].trim().toLowerCase();
+
+            // Log 
+            FlawedLogger.note(`Rqeuested Route :- /${route}`)
 
             // validting route 
             if (route == '') {
@@ -52,9 +58,10 @@ export class FlawedClient {
 
     // Start Server 
     start() {
-        this.server.listen(this.server_port);
+        this.server.listen(this.server_port)
+        .then(() => FlawedLogger.success('Server Started On Port ' + this.server_port))
+        .catch((e: any) => FlawedLogger.fatal(e))
         this.handleServer();
-        console.log("Server Started");
     };
 
     // Set Screens 
