@@ -24,13 +24,13 @@
 
 # 💾 Installation
 
-> Version 16.6.0 or newer of [Node.js](https://nodejs.org/) is required
+>  Package On [NPM](https://www.npmjs.com/package/@arnavk-09/flawed)
 
 ```
 npm install @arnavk-09/flawed
 ```
 
-> [Package On NPM](https://www.npmjs.com/package/@arnavk-09/flawed)
+> _Also install 'tslib' if any error comes on .ts_
 
 # 🔑 Features
 
@@ -48,7 +48,10 @@ npm install @arnavk-09/flawed
 
 # Simple Examples
 
-### Javascript
+<details open>
+<summary>In Javascript</summary>
+
+
 ```js
 // Imports 
 const { FlawedClient, FlawedScreen, FlawedComponent, UseComponent } = require('@arnavk-09/flawed');
@@ -111,10 +114,17 @@ app.set404Content(`404 Page!`);
 app.start();
 ```
 
-### Typescript
+</details>
+
+<br>
+
+<details>
+<summary>In Typescript</summary>
+
+
 ```ts
 // Imports 
-import { FlawedClient, FlawedScreen, FlawedComponent, UseComponent } from ('@arnavk-09/flawed');
+import { FlawedClient, FlawedScreen, FlawedComponent, UseComponent } from '@arnavk-09/flawed';
 
 // Init Flawed App 
 const app = new FlawedClient({
@@ -173,6 +183,9 @@ app.set404Content(`404 Page!`);
 // Starting Flawed App 
 app.start();
 ```
+
+
+</details>
 
 #### Checkout More Flawed Templates [Here...](https://github.com/ArnavK-09)
 
