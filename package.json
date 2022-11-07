@@ -1,6 +1,6 @@
 {
   "name": "@arnavk-09/flawed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "💩 Timepass Useless JS/TS & Html Framework",
   "private": false,
   "main": "./build/cjs/index.js",
