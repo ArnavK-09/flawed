@@ -12,7 +12,7 @@ export class FlawedComponent {
     }
 
     // if no view value specified 
-    view() {
+    view(props?: any) {
         return `
         Component
         `

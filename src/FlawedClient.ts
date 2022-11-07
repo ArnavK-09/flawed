@@ -39,19 +39,28 @@ export class FlawedClient {
 
             // validting route 
             if (route == '') {
-                // @ts-ignore index page 
-                res.send(`${GetPageContent(this.screens[0] == undefined ? new FlawedScreen({ id: 'site'}) : this.screens[0], this.sitehead)}`);
+                // finding index page 
+                const indexPage: FlawedScreen[] = this.screens.filter((screen) => screen.route.toLowerCase() == 'main'); 
+
+                // validating if index exists 
+                if (indexPage.length == 1) {
+                    // @ts-ignore rendering index 
+                    res.send(`${GetPageContent(indexPage[0], this.sitehead)}`);
+                } else {
+                    // index not there
+                    res.send(`${GetPageContent(this.screens[0] == undefined ? new FlawedScreen({ route: 'index_not_there'}) : this.screens[0], this.sitehead)}`);
+                };
             } else {
                 // getting any other page 
-                let routePage: FlawedScreen[] = this.screens.filter((screen) => screen.route == route);
+                let routePages: FlawedScreen[] = this.screens.filter((screen) => screen.route == route);
 
                 // validating if page exists 
-                if (routePage.length == 1) {
+                if (routePages.length >= 1) {
                     // @ts-ignore rendering page 
-                    res.send(`${GetPageContent(routePage[0], this.sitehead)}`);
+                    res.send(`${GetPageContent(routePages[0], this.sitehead)}`);
                 } else {
                     // 404
-                    res.send(`${FormatHtml(this.Screen404)}`);
+                    res.send(`${this.Screen404}`);
                 };
             };
         });

@@ -8,7 +8,7 @@ export function GetPageContent(ctx: FlawedScreen, head: FlawedHead) {
     // page 
     let renderedPageContent = ctx.render().page;
     // add head 
-    renderedPageContent = `${head.rawhead}\n<body>\n${renderedPageContent}\n</body>`;
+    renderedPageContent = `${head.rawhead}\n\n<body>\n${renderedPageContent}\n\n</body>`;
 
     // returning page content 
     return FormatHtml(renderedPageContent); // With Formatter

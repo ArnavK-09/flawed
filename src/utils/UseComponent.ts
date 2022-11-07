@@ -3,16 +3,17 @@ import { FlawedClient } from "../FlawedClient";
 import { FlawedComponent } from "../classes/FlawedComponent";
 
 // UseComponent 
-export function UseComponent(name: string, app: FlawedClient) {
+export function UseComponent(name: string, app: FlawedClient, props?: any) {
     // all components list 
     let componentsList: FlawedComponent[] = app.components;
+
     // find component with name 
     let componentFound = componentsList.filter((compo: FlawedComponent) => compo.component_name.toLowerCase() == name.toLowerCase());
 
     // checking if valid component 
     if (componentFound.length == 1) {
         // component found 
-        return componentFound[0]?.view()
+        return componentFound[0]?.view(props)
     } else {
         // if no component found 
         return new FlawedComponent().view()

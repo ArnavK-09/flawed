@@ -66,15 +66,15 @@ class Navbar extends FlawedComponent {
     // Giving Name To Component
     constructor() {
         super({
-            name: 'Navbar';
+            name: 'Navbar'
         });
     };
 
     // Component Content 
-    view() {
+    view(props) {
         return (
-          `
-            <a href='/'> Navbar </a>
+            `
+            <a href='${props.link}'> ${props.title} </a>
             <br>
           `
         );
@@ -86,7 +86,7 @@ class MainScreen extends FlawedScreen {
     // Giving ID To Screen
     constructor() {
         super({
-            route: 'main'; // use 'main' for index route
+            route: 'main', // use 'main' for index route
         });
     };
 
@@ -94,9 +94,9 @@ class MainScreen extends FlawedScreen {
     render() {
         return {
             page: `
-                ${UseComponent('Navbar', app)}
+                ${UseComponent('Navbar', app, { title: 'Navbar (Props)', link: '/' })}
                 Hellow Flawed!
-            `;
+            `,
         };
     };
 };
@@ -136,15 +136,15 @@ class Navbar extends FlawedComponent {
     // Giving Name To Component
     constructor() {
         super({
-            name: 'Navbar';
+            name: 'Navbar'
         });
     };
 
     // Component Content 
-    view() {
+    view(props) {
         return (
-          `
-            <a href='/'> Navbar </a>
+            `
+            <a href='${props.link}'> ${props.title} </a>
             <br>
           `
         );
@@ -156,7 +156,7 @@ class MainScreen extends FlawedScreen {
     // Giving ID To Screen
     constructor() {
         super({
-            route: 'main' // use 'main' for index route
+            route: 'main', // use 'main' for index route
         });
     };
 
@@ -164,9 +164,9 @@ class MainScreen extends FlawedScreen {
     render() {
         return {
             page: `
-                ${UseComponent('Navbar', app)}
+                ${UseComponent('Navbar', app, { title: 'Navbar (Props)', link: '/' })}
                 Hellow Flawed!
-            `
+            `,
         };
     };
 };
@@ -201,8 +201,8 @@ Here are some packages from Flawed
 
 | Package                                                                        | Description                                                  |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| [`@arnavk-09/create-flawed`](https://www.npmjs.com/package/@arnavk-09/flawed)                    | TODO                        |
 | [`@arnavk-09/flawed`](https://www.npmjs.com/package/@arnavk-09/flawed)                           | Useless JS/TS & Html Framework         |
+| [`@arnavk-09/create-flawed`](https://www.npmjs.com/package/@arnavk-09/flawed)                    | TODO                        |
 
 # 💪 Classes
 
@@ -216,6 +216,13 @@ There is a system that allows you to create your site with Flawed
 # 📚 Documentation
 
 > _TODO_
+
+# 🆕 Newest Change
+### • v1.0.1
+- [x] **Added Props**
+- [x] **Colorfull Logger**
+- [x] **Main Route Bug Fix Props**
+- [x] **404 Page Bug Fix Props**
 
 # 💝 Thank you
 
