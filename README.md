@@ -187,13 +187,13 @@ app.start();
 
 </details>
 
-#### Checkout More Flawed Templates [Here...](https://github.com/ArnavK-09)
+#### Checkout Structured Flawed Site [Here...](https://github.com/ArnavK-09/flawed-docs/)
 
 
 # 🚔 Need help?
 
 - [Chat With Me On Discord](https://discord.gg/V3WBURuh4N)
-- [Check Documentation - TODO](https://github.com/ArnavK-09/flawed)
+- [Check Documentation](https://github.com/ArnavK-09/flawed-docs)
 
 # 🎒 Packages
 
@@ -215,14 +215,11 @@ There is a system that allows you to create your site with Flawed
 
 # 📚 Documentation
 
-> _TODO_
+> You can view documentation [here](https://github.com/ArnavK-09/flawed-docs)
 
 # 🆕 Newest Change
-### • v1.0.1
-- [x] **Added Props**
-- [x] **Colorfull Logger**
-- [x] **Main Route Bug Fix Props**
-- [x] **404 Page Bug Fix Props**
+### • v1.0.3
+- [x] **Added Docs Site**
 
 # 💝 Thank you
 
